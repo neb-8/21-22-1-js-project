@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Varázslatos katakomba</title>
+</head>
+<body>
+    <span></span>
+    <canvas width="600" height="600"></canvas>
+    <table class="adatok">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="aktualis">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div id="befejezo" class="hidden">
+        <form>
+            <h1 id="gyoztes"></h1><br>
+            <button id="ujrakezdes" type="submit">Játék újra</button>
+        </form> 
+    </div>
+    <div id="kezdo">
+        <form>
+            játékosok száma<input type="number" id="jatekosok" value="2" min="1" max="4"><br>
+            kincsek száma<input type="number" id="kincsek" value="2" min="1" max="24">
+            <p>max <i>24/játékosok száma</i> darab lehet!</p>
+            <button id="start" type="button">Start!</button>
+        </form>
+    </div>
+    <div id="informacio" class="hidden">A katakomba szobáit egy 7x7-es
+        négyzetrács cellái jelképezik. Minden szoba
+        esetén adott, hogy mely falain van ajtó. Ha
+        két szomszédos szoba érintkező falán egy-egy
+        ajtó van, akkor át lehet menni egyik szobából a
+        másikba. A négyzetrács páros sorait és oszlopait
+        el lehet tolni, a többi szoba végig rögzített a
+        játék során. Az eltolásokkal az ajtókon keresztül
+        utak nyílnak a szobák között, így lehet eljutni a
+        kincsekhez. Mindegyik kérő arra törekszik, hogy a
+        katakomba szobáinak ötletes eltolásával eljusson
+        a kincsekhez. Aki elsőként találja meg mindahányat
+        és kiindulópontjára sikeresen visszaérkezik az a nyertes.<br><br>
+
+        A játék során minden játékosnak a kincsei közül azt kell
+        megszereznie, amit az aktuálisan legfelső, mindenki által
+        látható kincskártya mutat. Arra a mezőre kell eljutni.
+        Ahhoz, hogy a célt elérje, a játékosnak először a
+        katakombát kell átalakítania a kimaradt szoba becsúsztatásával,
+        és lépnie mindig csak ez után szabad a figurájával.<br><br>
+
+        A katakomba átalakítása a következőképpen történik:
+        A játékos a kimaradt szobát (tetszőlegesen elforgatva)
+        valamelyik oldalról becsúsztathatja a játéktábla területére
+        egy szabadon mozgó sor vagy oszlop szélén, aminek következtében
+        az átellenes oldalon kiesik egy másik szoba. A tábla szélén
+        nyilak jelzik azokat a helyeket, ahol a szobát be lehet
+        csúsztatni. A szoba bárhol betolható, kivétel ott, ahol az
+        imént kilökődött. Nem szabad tehát az előző játékos lépését
+        rögtön „visszacsinálni". Ha a szobák eltolása során a
+        szobával együtt egy figura is kitolódnék – akár másé, akár a
+        miénk -, akkor ezt a figurát az ellenkező oldalról imént
+        becsúsztatott szobába kell helyezni.
+    </div>
+    <button id="info">info</button>
+    <script src="script.js"></script>
+</body>
+</html>
